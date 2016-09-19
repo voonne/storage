@@ -1,0 +1,36 @@
+{
+	"name": "voonne/storage",
+	"type": "library",
+	"description": "Simple storage to store any type of files",
+	"license": ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"authors": [
+		{
+			"name": "Jan Lavička",
+			"email": "mail@janlavicka.name",
+			"homepage": "http://www.janlavicka.name"
+		}
+	],
+	"support": {
+		"email": "mail@janlavicka.name",
+		"issues": "https://github.com/voonne/storage/issues"
+	},
+	"require": {
+		"dfridrich/php-mime-type": "~1.0",
+		"nette/utils": "~2.4"
+	},
+	"require-dev": {
+		"codeception/codeception": "~2.1",
+		"mikey179/vfsStream": "~1.6",
+		"mockery/mockery": "~0.9",
+		"nette/caching": "~2.5",
+		"nette/robot-loader": "~2.4"
+	},
+	"autoload": {
+		"psr-4": {
+			"Voonne\\Storage\\": "src/"
+		},
+		"files": [
+			"src/exceptions.php"
+		]
+	}
+}
