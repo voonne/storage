@@ -32,42 +32,20 @@ class StorageManager
 
 
 	/**
-	 * Creates new directory.
-	 *
-	 * @param string $name
-	 *
-	 * @return Directory
-	 *
-	 * @throws DuplicateEntryException
-	 */
-	public function createDirectory($name)
-	{
-		if ($this->adapter->directoryExists($name)) {
-			throw new DuplicateEntryException("Directory '$name' already exists.");
-		}
-
-		$this->adapter->createDirectory($name);
-
-		return new Directory($name, $this->adapter);
-	}
-
-
-	/**
 	 * Returns existing directory.
 	 *
 	 * @param string $name
 	 *
 	 * @return Directory
-	 *
-	 * @throws DirectoryNotFoundException
 	 */
 	public function getDirectory($name)
 	{
 		if (!$this->adapter->directoryExists($name)) {
-			throw new DirectoryNotFoundException("Directory '$name' not found.");
+			$this->adapter->createDirectory($name);
 		}
 
 		return new Directory($name, $this->adapter);
+
 	}
 
 }

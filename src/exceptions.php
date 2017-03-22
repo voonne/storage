@@ -29,12 +29,6 @@ class FileNotFoundException extends IOException
 }
 
 
-class DirectoryNotFoundException extends IOException
-{
-
-}
-
-
 class InvalidArgumentException extends \InvalidArgumentException
 {
 

@@ -79,7 +79,7 @@ class MacroTest extends Unit
 		$macroNode->args = 'photos, photo.png';
 
 		$this->assertEquals(
-			'echo $this->global->uiPresenter->link(":Admin:Api:Files:default", ["directoryName" => "photos", "fileName" => "photo.png"]);',
+			'echo $this->global->uiPresenter->link(":Admin:Api:Files:default", ["directoryName" => photos, "fileName" => photo.png]);',
 			$this->macros->macroFileLink($macroNode, $phpWriter));
 	}
 

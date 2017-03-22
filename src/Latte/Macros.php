@@ -54,7 +54,7 @@ class Macros extends MacroSet
 			throw new InvalidArgumentException('Invalid asset link: file name must be non-empty string.');
 		}
 
-		return 'echo $this->global->uiPresenter->link(":Admin:Api:Files:default", ["directoryName" => "' . trim($args[0]) . '", "fileName" => "' . trim($args[1]) . '"]);';
+		return 'echo $this->global->uiPresenter->link(":Admin:Api:Files:default", ["directoryName" => ' . trim($args[0]) . ', "fileName" => ' . trim($args[1]) . ']);';
 	}
 
 }

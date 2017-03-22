@@ -45,35 +45,6 @@ class StorageManagerTest extends Unit
 	}
 
 
-	public function testCreateDirectory()
-	{
-		$this->adapter->shouldReceive('directoryExists')
-			->once()
-			->with('directory')
-			->andReturn(false);
-
-		$this->adapter->shouldReceive('createDirectory')
-			->once()
-			->with('directory');
-
-		$directory = $this->storageManager->createDirectory('directory');
-
-		$this->assertEquals('directory', $directory->getName());
-	}
-
-
-	public function testCreateDirectoryDirectoryExists()
-	{
-		$this->adapter->shouldReceive('directoryExists')
-			->once()
-			->with('directory')
-			->andReturn(true);
-
-		$this->expectException(DuplicateEntryException::class);
-		$this->storageManager->createDirectory('directory');
-	}
-
-
 	public function testGetDirectory()
 	{
 		$this->adapter->shouldReceive('directoryExists')
@@ -94,8 +65,13 @@ class StorageManagerTest extends Unit
 			->with('directory')
 			->andReturn(false);
 
-		$this->expectException(DirectoryNotFoundException::class);
-		$this->storageManager->getDirectory('directory');
+		$this->adapter->shouldReceive('createDirectory')
+			->once()
+			->with('directory');
+
+		$directory = $this->storageManager->getDirectory('directory');
+
+		$this->assertEquals('directory', $directory->getName());
 	}
 
 }

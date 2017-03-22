@@ -10,8 +10,6 @@
 
 namespace Voonne\Storage\Adapters;
 
-use Voonne\Storage\IOException;
-
 
 interface IAdapter
 {

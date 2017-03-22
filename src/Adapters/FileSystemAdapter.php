@@ -32,7 +32,11 @@ class FileSystemAdapter implements IAdapter
 
 
 	/**
-	 * {@inheritdoc}
+	 * Checks if folder exists.
+	 *
+	 * @param string $directoryName
+	 *
+	 * @return bool
 	 */
 	public function directoryExists($directoryName)
 	{
@@ -41,7 +45,9 @@ class FileSystemAdapter implements IAdapter
 
 
 	/**
-	 * {@inheritdoc}
+	 * Creates new directory.
+	 *
+	 * @param string $directoryName
 	 */
 	public function createDirectory($directoryName)
 	{
@@ -52,7 +58,9 @@ class FileSystemAdapter implements IAdapter
 
 
 	/**
-	 * {@inheritdoc}
+	 * Removes directory.
+	 *
+	 * @return string $directoryName
 	 */
 	public function removeDirectory($directoryName)
 	{
@@ -65,7 +73,12 @@ class FileSystemAdapter implements IAdapter
 
 
 	/**
-	 * {@inheritdoc}
+	 * Checks if file exists.
+	 *
+	 * @param string $directoryName
+	 * @param string $fileName
+	 *
+	 * @return bool
 	 */
 	public function fileExists($directoryName, $fileName)
 	{
@@ -74,7 +87,11 @@ class FileSystemAdapter implements IAdapter
 
 
 	/**
-	 * @inheritdoc}
+	 * Creates new file.
+	 *
+	 * @param string $directoryName
+	 * @param string $fileName
+	 * @param string $sourceFile
 	 */
 	public function createFile($directoryName, $fileName, $sourceFile)
 	{
@@ -85,7 +102,10 @@ class FileSystemAdapter implements IAdapter
 
 
 	/**
-	 * @inheritdoc}
+	 * Removes file.
+	 *
+	 * @param string $directoryName
+	 * @param string $fileName
 	 */
 	public function removeFile($directoryName, $fileName)
 	{
@@ -96,7 +116,12 @@ class FileSystemAdapter implements IAdapter
 
 
 	/**
-	 * @inheritdoc}
+	 * Returns local path to file.
+	 *
+	 * @param string $directoryName
+	 * @param string $fileName
+	 *
+	 * @return string
 	 */
 	public function getFilePath($directoryName, $fileName)
 	{
@@ -105,7 +130,11 @@ class FileSystemAdapter implements IAdapter
 
 
 	/**
-	 * {@inheritdoc}
+	 * Returns list of files.
+	 *
+	 * @param string $directoryName
+	 *
+	 * @return array
 	 */
 	public function getFiles($directoryName)
 	{
